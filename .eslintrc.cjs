@@ -17,6 +17,7 @@ module.exports = {
     "react/no-unknown-property": "off",
     "react-hooks/exhaustive-deps": "off",
     "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

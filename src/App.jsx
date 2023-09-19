@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import Tabla from "./component/Tabla"
 
 
 function App() {
@@ -33,33 +35,20 @@ function App() {
 
         <div className="flex">
           <div className="w-1/2  border border-black">
-            <div className="pl-20">
-              fgg
+            <div className="pl-16 pt-20">
+              <ul>
+                <li><Link to="/">Inicio</Link></li>
+                <li><Link>Hospitalizados</Link></li>
+                <li><Link>Fallecidos</Link></li>
+                <li><Link>Vacunados</Link></li>
+              </ul>
             </div>
           </div>
           <div className="w-full">
             {
               covid.map(({states, dateChecked, positive, negative, hash}) => (
-                <div key={hash} className="bg-white shadow-md rounded-lg overflow-hidden">
-                  <table className="min-w-full">
-                    <thead className="bg-gray-200">
-                      <tr>
-                        <th className="py-2 px-4 text-left">Fecha</th>
-                        <th className="py-2 px-4">Estados</th>
-                        <th className="py-2 px-4">Positivos</th>
-                        <th className="py-2 px-4">Negativos</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td  className="py-2 px-4 align-middle text-left">{dateChecked}</td>
-                        <td  className="py-2 px-4 align-middle text-center">{states}</td>
-                        <td  className="py-2 px-4 align-middle text-center">{positive}</td>
-                        <td  className="py-2 px-4 align-middle text-center">{negative}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <Tabla hash={hash} fila1="Fecha" fila2="Estados" fila3="Positivos" fila4="Negativos"
+                col1={dateChecked} col2={states} col3={positive} col4={negative} />
               ))
             }
           </div>
