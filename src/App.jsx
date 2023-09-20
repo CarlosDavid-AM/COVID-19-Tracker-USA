@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 import Tabla from "./component/Tabla"
 
 
-function App() {
+const App = () => {
 
-    const [covid, setCovid] = useState([])
+  const [covid, setCovid] = useState([])
 
   const API_URL = import.meta.env.VITE_BASE_URL
 
@@ -38,9 +38,9 @@ function App() {
             <div className="pl-16 pt-20">
               <ul>
                 <li><Link to="/">Inicio</Link></li>
-                <li><Link>Hospitalizados</Link></li>
-                <li><Link>Fallecidos</Link></li>
-                <li><Link>Vacunados</Link></li>
+                <li><Link to="/hospitalizados">Hospitalizados</Link></li>
+                <li><Link to="/fallecidos">Fallecidos</Link></li>
+                <li><Link to="/vacunados">Vacunados</Link></li>
               </ul>
             </div>
           </div>

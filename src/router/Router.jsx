@@ -10,15 +10,15 @@ const Router = createBrowserRouter([
     element: <App />
   },
   {
-    path: "/",
+    path: "/fallecidos",
     element: <Fallecidos/>
   },
   {
-    path: "/",
+    path: "/hospitalizados",
     element: <Hospitalizados />
   },
   {
-    path: "/",
+    path: "/vacunados",
     element: <Vacunados />
   }
 ])
